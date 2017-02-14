@@ -1,15 +1,15 @@
 {
     "author": {
-        "name": "Xavier Hainaux",
-        "email": "xavier.hainaux@gmail.com"
+        "name": "Xavier Hainaux, Hesk",
+        "email": "jobhesk@gmail.com"
     },
-    "name": "localize-with-spreadsheet",
-    "description": "Create a localization file in Android or iOS format from a Google Spreadsheet",
-    "version": "0.2.1",
-    "homepage": "https://github.com/xavierha/localize-with-spreadsheet",
+    "name": "localize-spreadsheet-bot",
+    "description": "Create a localization file in Android, iOS, React-native format from a Google Spreadsheet",
+    "version": "0.3.5",
+    "homepage": "https://github.com/ONode/localize-spreadsheet-bot",
     "repository": {
         "type": "git",
-        "url": "git://github.com/xavierha/localize-with-spreadsheet.git"
+        "url": "git://github.com/ONode/localize-spreadsheet-bot.git"
     },
     "main": "index.js",
     "dependencies": {

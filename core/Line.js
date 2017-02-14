@@ -16,7 +16,7 @@ var Line = function (key, value) {
     this._key = key || '';
     this._value = value || '';
 
-}
+};
 
 Line.checkIsComment = function (val) {
     for (var i = 0; i < COMMENT_STARTERS.length; i++) {

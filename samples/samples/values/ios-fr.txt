@@ -1,0 +1,6 @@
+// AUTO-GENERATED
+// main
+"yes" = "Taip";
+"no" = "Ne";
+// price
+"cancel" = "Nutraukti";

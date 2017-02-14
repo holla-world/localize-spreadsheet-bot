@@ -10,26 +10,20 @@ var Gs2File = function (reader, writer) {
 Gs2File.fromGoogleSpreadsheet = function (spreadsheetKey, sheets) {
     var gs2file = new Gs2File(new GSReader(spreadsheetKey, sheets),
         new FileWriter());
-
     return gs2file;
 };
-
 Gs2File.prototype.setValueCol = function (valueCol) {
     this._defaultValueCol = valueCol;
-}
-
+};
 Gs2File.prototype.setKeyCol = function (keyCol) {
     this._defaultKeyCol = keyCol;
-}
-
+};
 Gs2File.prototype.setFormat = function (format) {
     this._defaultFormat = format;
-}
-
+};
 Gs2File.prototype.setEncoding = function (encoding) {
     this._defaultEncoding = encoding;
-}
-
+};
 Gs2File.prototype.save = function (outputPath, opts, cb) {
     console.log('saving ' + outputPath);
     var self = this;
@@ -53,9 +47,9 @@ Gs2File.prototype.save = function (outputPath, opts, cb) {
         format = this._defaultFormat;
     }
 
-    if(!encoding) {
+    if (!encoding) {
         encoding = this._defaultEncoding;
-        if(!encoding) {
+        if (!encoding) {
             encoding = 'utf8';
         }
     }

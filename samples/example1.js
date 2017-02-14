@@ -5,6 +5,7 @@ transformer.setKeyCol('KEY');
 
 transformer.save("samples/values/nl.json", { valueCol: "NL", format: "json", header: '' });
 transformer.save("samples/values/fr.json", { valueCol: "FR", format: "json" });
+transformer.save("samples/values/fr.json", { valueCol: "FR", format: "react-native-i18n" });
 transformer.save("samples/values/r.dart", { valueCol: "FR", format: "dartTemplate", className: 'Translations' });
 transformer.save("samples/values/strings.xml", { valueCol: "NL", format: "android" });
 transformer.save("samples/values-fr/strings.xml", { valueCol: "FR", format: "android" });

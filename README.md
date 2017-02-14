@@ -2,12 +2,17 @@
 
 
 ## Installation
-	npm install localize-with-spreadsheet
+
+	npm install localize-spreadsheet-bot
 
 ## Features Support
 - Native iOS file format output
 - Native Android string xml file output
 - react-native-i18n JS file output
+- json JS file output
+- dart JS file output
+- dartTemplate schema file output
+- .net schema file output
 
 ## Example to develop your pileline
 Given a Google Spreadsheet like this:  
