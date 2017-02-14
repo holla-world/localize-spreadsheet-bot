@@ -40,3 +40,6 @@ Ex:
 - The script will preserve everything that is above the tags: < !-- AUTO-GENERATED --> or // AUTO-GENERATED
 - Your spreadsheet should be "Published" for this to work
 - You need to have git installed for the installation
+
+## From Android Res Folder
+If you got the existing resources developed under Android Resource folder, you can use one of these library to generate Google Sheet format based on the original translation file. Install the module into your IDE and it will do that magic [Source](https://github.com/LiewJunTung/Android-strings-xml-csv-converter)
