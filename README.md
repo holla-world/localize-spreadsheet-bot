@@ -8,7 +8,7 @@
 ## Features Support
 - Native iOS file format output
 - Native Android string xml file output
-- react-native-i18n JS file output
+- react-native-i18n JS file output based on [react-native-i18n](https://github.com/AlexanderZaytsev/react-native-i18n)
 - json JS file output
 - dart JS file output
 - dartTemplate schema file output
