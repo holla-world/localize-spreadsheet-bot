@@ -4,7 +4,12 @@
 ## Installation
 	npm install localize-with-spreadsheet
 
-## Example
+## Features Support
+- Native iOS file format output
+- Native Android string xml file output
+- react-native-i18n JS file output
+
+## Example to develop your pileline
 Given a Google Spreadsheet like this:  
 ![Spreadsheet example](https://github.com/xavierha/localize-with-spreadsheet/raw/master/doc/spreadsheet-example.png)
 
@@ -23,6 +28,10 @@ Create a file update-localization.js
 
     transformer.save("nl.lproj/Localizable.strings", { valueCol: "NL", format: "ios" });
     transformer.save("fr.lproj/Localizable.strings", { valueCol: "FR", format: "ios" });
+    
+    
+    transformer.save(".../to/path", {valueCol:"FR", format:"react-native-i18n"}
+    transformer.save(".../to/path", {valueCol:"ZH", format:"react-native-i18n"}
 
 Run it with
 
