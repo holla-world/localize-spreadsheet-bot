@@ -1,6 +1,5 @@
 # Convert a Google Spreadsheet to a localization file
 
-
 ## Installation
 
 	npm install localize-spreadsheet-bot
@@ -13,10 +12,13 @@
 - dart JS file output
 - dartTemplate schema file output
 - .net schema file output
+- generate type flow from [Utility Types](https://flow.org/en/docs/types/utilities/)
+
 
 ## Example to develop your pileline
 Given a Google Spreadsheet like this:  
 ![Spreadsheet example](https://github.com/xavierha/localize-with-spreadsheet/raw/master/doc/spreadsheet-example.png)
+
 
 The tool fetch the spreadsheet and write the result to a file in the Android or iOS format:
 
@@ -35,8 +37,10 @@ Create a file update-localization.js
     transformer.save("fr.lproj/Localizable.strings", { valueCol: "FR", format: "ios" });
     
     
-    transformer.save(".../to/path", {valueCol:"FR", format:"react-native-i18n"}
-    transformer.save(".../to/path", {valueCol:"ZH", format:"react-native-i18n"}
+    transformer.save(".../to/path/fr.json", {valueCol:"FR", format:"react-native-i18n"});
+    transformer.save(".../to/path/zh.json", {valueCol:"ZH", format:"react-native-i18n"});
+
+    transformer.saveFlowTypeFileJs(".../to/path/types.js");
 
 Run it with
 

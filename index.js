@@ -1,15 +1,20 @@
-var GSReader = require('./core/LineReader.js').GS;
-var FileWriter = require('./core/Writer.js').File;
-var Transformer = require('./core/Transformer.js');
+const GSReader = require('./core/LineReader.js').GS;
+const FileWriter = require('./core/Writer.js').File;
+const Transformer = require('./core/Transformer.js');
 
-var Gs2File = function (reader, writer) {
+const Gs2File = function (reader, writer) {
     this._reader = reader;
     this._writer = writer;
 };
 
 Gs2File.fromGoogleSpreadsheet = function (spreadsheetKey, sheets) {
-    var gs2file = new Gs2File(new GSReader(spreadsheetKey, sheets),
+
+    const gs2file = new Gs2File(
+        //the reader
+        new GSReader(spreadsheetKey, sheets),
+        //the writer
         new FileWriter());
+
     return gs2file;
 };
 Gs2File.prototype.setValueCol = function (valueCol) {
@@ -56,15 +61,23 @@ Gs2File.prototype.save = function (outputPath, opts, cb) {
 
     this._reader.select(keyCol, valueCol).then(function (lines) {
         if (lines) {
-            var transformer = Transformer[format || 'android'];
+            const transformer = Transformer[format || 'android'];
             self._writer.write(outputPath, encoding, lines, transformer, opts);
         }
-
         if (typeof(cb) == 'function') {
             cb();
         }
     });
-
 };
-
+Gs2File.prototype.saveFlowTypeFileJs = function (outputPath, cb) {
+    const self = this, encoding = 'utf8', keyCol = this._defaultKeyCol;
+    this._reader.select(keyCol).then(function (lines) {
+        if (lines) {
+            self._writer.write(outputPath, encoding, lines, Transformer.flowtype);
+        }
+    });
+    if (typeof(cb) == 'function') {
+        cb();
+    }
+};
 module.exports = Gs2File;
