@@ -5,7 +5,7 @@
     },
     "name": "localize-spreadsheet-bot",
     "description": "Create a localization file in Android, iOS, React-native format from a Google Spreadsheet",
-    "version": "0.5.3",
+    "version": "0.6.0",
     "homepage": "https://github.com/ONode/localize-spreadsheet-bot",
     "repository": {
         "type": "git",

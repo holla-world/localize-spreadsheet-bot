@@ -49,6 +49,8 @@ const iOSTransformer = {
         normalizedValue = normalizedValue.replace(/%lu/g, "%@");
         normalizedValue = normalizedValue.replace(/%[0-9]\$d/g, "%@");
         normalizedValue = normalizedValue.replace(/%[0-9]\$lu/g, "%@");
+        //support ordered parameters %1$@
+        normalizedValue = normalizedValue.replace(/%(\d)\$s/gi, "%$1\$@");
 
         var normalizedKey = key.replace(/ios_/gi, "");
 
@@ -321,9 +323,9 @@ module.exports = {
     'android': androidTransformer,
     'json': jsonTransformer,
     'dart': dartTransformer,
-    'react-native-i18n': jsonTransformer,
     'dartTemplate': dartTemplateTransformer,
     '.net': dotNetTransformer,
-    'flowtype': flowTypeTransformer
+    'flowtype': flowTypeTransformer,
+    'react-native-i18n': jsonTransformer
 };
 
