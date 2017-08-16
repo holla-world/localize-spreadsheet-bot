@@ -8,13 +8,11 @@ const Gs2File = function (reader, writer) {
 };
 
 Gs2File.fromGoogleSpreadsheet = function (spreadsheetKey, sheets) {
-
     const gs2file = new Gs2File(
         //the reader
         new GSReader(spreadsheetKey, sheets),
         //the writer
         new FileWriter());
-
     return gs2file;
 };
 Gs2File.prototype.setValueCol = function (valueCol) {
