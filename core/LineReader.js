@@ -44,7 +44,7 @@ GSReader.prototype.fetchAllCells = function () {
     } else {
         return self._fetchedWorksheets;
     }
-}
+};
 
 GSReader.prototype.select = function (keyCol, valCol) {
     var deferred = Q.defer();
@@ -68,7 +68,7 @@ GSReader.prototype.extractFromRawData = function (rawWorksheets, keyCol, valCol)
     }
 
     return extractedLines;
-}
+};
 
 GSReader.prototype.extractFromWorksheet = function (rawWorksheet, keyCol, valCol) {
     var results = [];
@@ -92,14 +92,14 @@ GSReader.prototype.extractFromWorksheet = function (rawWorksheet, keyCol, valCol
             if (row) {
                 var keyValue = row[keyIndex];
                 var valValue = row[valIndex];
-
+                //console.log("there is an empty found", keyValue, valValue);
                 results.push(new Line(keyValue, valValue));
             }
         }
     }
 
     return results;
-}
+};
 
 GSReader.prototype.flatenWorksheet = function (rawWorksheet) {
     var rows = [];

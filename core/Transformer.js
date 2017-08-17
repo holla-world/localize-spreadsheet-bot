@@ -95,8 +95,9 @@ const androidTransformer = {
         if (normalizedValue.toLowerCase().includes('<a href="%')) {
             normalizedValue = "<![CDATA[" + normalizedValue + "]]>";
         }
+
         if (key.indexOf(" ") > -1) {
-            return "";
+            return this.transformComment(key);
         }
 
         var ouput = '<string name="' + key + '">' + normalizedValue + '</string>';
