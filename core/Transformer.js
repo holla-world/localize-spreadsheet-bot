@@ -69,7 +69,9 @@ const iOSTransformer = {
         return output;
     }
 };
-
+function test_case_link(link) {
+    return /href="(.*?)"/g.test(link);
+}
 const androidTransformer = {
     transformComment: function (comment) {
         return "<!-- " + comment + " -->";
@@ -92,7 +94,7 @@ const androidTransformer = {
          */
         normalizedValue = normalizedValue.replace(/([^\.]|^)(\.{3})([^\.]|$)/gi, '$1&#8230;$3');
 
-        if (normalizedValue.toLowerCase().includes('<a href="%')) {
+        if (test_case_link(normalizedValue.toLowerCase())) {
             normalizedValue = "<![CDATA[" + normalizedValue + "]]>";
         }
 
