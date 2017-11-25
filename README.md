@@ -6,22 +6,21 @@
 
 ## Features Support
 - Native iOS file format output
-- Native Android string xml file output
+- Native Android string xml file output [see example](https://github.com/ONode/localize-spreadsheet-bot/tree/master/samples/sample_android.js)
 - react-native-i18n JS file output based on [react-native-i18n](https://github.com/AlexanderZaytsev/react-native-i18n)
 - json JS file output
 - dart JS file output
 - dartTemplate schema file output
 - .net schema file output
 - generate type flow from [Utility Types](https://flow.org/en/docs/types/utilities/)
+- Laravel framework PHP supports [See example](https://github.com/ONode/localize-spreadsheet-bot/tree/master/samples/sample_laravel.js)
 
 
-## Example to develop your pileline
+## Example to develop your pipeline
 Given a Google Spreadsheet like this:  
 ![Spreadsheet example](https://github.com/xavierha/localize-with-spreadsheet/raw/master/doc/spreadsheet-example.png)
 
-
 The tool fetch the spreadsheet and write the result to a file in the Android or iOS format:
-
 ![Result android](https://github.com/xavierha/localize-with-spreadsheet/raw/master/doc/result-android.png) ![Result iOS](https://github.com/xavierha/localize-with-spreadsheet/raw/master/doc/result-ios.png)
 
 Create a file update-localization.js
