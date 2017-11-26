@@ -1,6 +1,6 @@
 <?php
 return [
-"sli"=>[
+
 /*======= AUTO-GENERATED translation tag lines -- zyntauri factory production =====*/
 
   'application_name'=>'英皇戲院',
@@ -708,4 +708,4 @@ Force Upgrade
 立即更新英皇戲院手機App
 ',
   'force_upgrade_btn_later'=>'稍後',
-],];
+];
