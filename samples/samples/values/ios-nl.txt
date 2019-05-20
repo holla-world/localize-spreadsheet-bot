@@ -1,6 +1,0 @@
-// AUTO-GENERATED
-// main
-"yes" = "";
-"no" = "";
-// price
-"cancel" = "";

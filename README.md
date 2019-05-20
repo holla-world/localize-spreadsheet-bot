@@ -1,26 +1,15 @@
 # Convert a Google Spreadsheet to a localization file
 
+
 ## Installation
+	npm install localize-with-spreadsheet
 
-	npm install localize-spreadsheet-bot
-
-## Features Support
-- Native iOS file format output
-- Native Android string xml file output [see example](https://github.com/ONode/localize-spreadsheet-bot/tree/master/samples/sample_android.js)
-- react-native-i18n JS file output based on [react-native-i18n](https://github.com/AlexanderZaytsev/react-native-i18n)
-- json JS file output
-- dart JS file output
-- dartTemplate schema file output
-- .net schema file output
-- generate type flow from [Utility Types](https://flow.org/en/docs/types/utilities/)
-- Laravel framework PHP supports [See example](https://github.com/ONode/localize-spreadsheet-bot/tree/master/samples/sample_laravel.js)
-
-
-## Example to develop your pipeline
+## Example
 Given a Google Spreadsheet like this:  
 ![Spreadsheet example](https://github.com/xavierha/localize-with-spreadsheet/raw/master/doc/spreadsheet-example.png)
 
 The tool fetch the spreadsheet and write the result to a file in the Android or iOS format:
+
 ![Result android](https://github.com/xavierha/localize-with-spreadsheet/raw/master/doc/result-android.png) ![Result iOS](https://github.com/xavierha/localize-with-spreadsheet/raw/master/doc/result-ios.png)
 
 Create a file update-localization.js
@@ -34,12 +23,6 @@ Create a file update-localization.js
 
     transformer.save("nl.lproj/Localizable.strings", { valueCol: "NL", format: "ios" });
     transformer.save("fr.lproj/Localizable.strings", { valueCol: "FR", format: "ios" });
-    
-    
-    transformer.save(".../to/path/fr.json", {valueCol:"FR", format:"react-native-i18n"});
-    transformer.save(".../to/path/zh.json", {valueCol:"ZH", format:"react-native-i18n"});
-
-    transformer.saveFlowTypeFileJs(".../to/path/types.js");
 
 Run it with
 
@@ -57,6 +40,3 @@ Ex:
 - The script will preserve everything that is above the tags: < !-- AUTO-GENERATED --> or // AUTO-GENERATED
 - Your spreadsheet should be "Published" for this to work
 - You need to have git installed for the installation
-
-## From Android Res Folder
-If you got the existing resources developed under Android Resource folder, you can use one of these library to generate Google Sheet format based on the original translation file. Install the module into your IDE and it will do that magic [Source](https://github.com/LiewJunTung/Android-strings-xml-csv-converter)

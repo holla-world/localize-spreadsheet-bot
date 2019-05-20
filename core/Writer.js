@@ -30,8 +30,10 @@ FileWriter.prototype.write = function (filePath, encoding, lines, transformer, o
 var writeFileAndCreateDirectoriesSync = function (filepath, content, encoding) {
     var mkpath = require('mkpath');
     var path = require('path');
+
     var dirname = path.dirname(filepath);
     mkpath.sync(dirname);
+
     fs.writeFileSync(filepath, content, encoding);
 };
 
@@ -52,7 +54,7 @@ FileWriter.prototype.getTransformedLines = function (lines, transformer) {
     }
 
     return valueToInsert;
-};
+}
 
 var FakeWriter = function () {
 
@@ -62,4 +64,4 @@ FakeWriter.prototype.write = function (filePath, lines, transformer) {
 
 };
 
-module.exports = {File: FileWriter, Fake: FakeWriter};
+module.exports = { File: FileWriter, Fake: FakeWriter };
