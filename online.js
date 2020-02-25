@@ -2,7 +2,7 @@ const server = require ('server');
 const { get, post } = server.router;
 const { render, error, redirect, status, file, download, jsonp } = server.reply;
 
-const worker = require ('./samples/localizejson.js')
+const worker = require ('./workspace/localizejson.js')
 
 const options = {
     public,  // renamed on the argument so

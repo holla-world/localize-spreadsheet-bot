@@ -1,6 +1,7 @@
 var GSReader = require ('./core/LineReader.js').GSV4;
 var FileWriter = require ('./core/Writer.js').File;
-var Transformer = require ('./core/Transformer.js');
+var SplitProcess = require ('./core/SplitProcess');
+var Transformer = require ('./core/Transformer');
 var Gs2File = function (reader, writer) {
     this._reader = reader;
     this._writer = writer;
@@ -23,6 +24,11 @@ Gs2File.prototype.setFormat = function (format) {
 };
 Gs2File.prototype.setEncoding = function (encoding) {
     this._defaultEncoding = encoding;
+};
+Gs2File.prototype.programSplit = function (path, parentPath, lang) {
+    var VK = new SplitProcess (path, parentPath, lang, function () {
+        console.log ("process is not done here");
+    });
 };
 Gs2File.prototype.save = function (outputPath, opts, cb) {
     console.log ('saving ' + outputPath);
@@ -58,7 +64,7 @@ Gs2File.prototype.save = function (outputPath, opts, cb) {
         if (lines) {
             var transformer = Transformer[format || 'android'];
             self._writer.write (outputPath, encoding, lines, transformer, opts);
-            console.log ("enter line");
+            // console.log ("enter line");
         }
 
         if (typeof cb == 'function') {

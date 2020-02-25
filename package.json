@@ -1,11 +1,8 @@
 {
-  "name": "@logistics/localize-with-spreadsheet",
-  "version": "1.1.0",
+  "name": "localize-with-spreadsheet",
+  "version": "1.2.0",
   "description": "Create a localization file in Android or iOS format from a Google Spreadsheet",
   "author": "xavier.hainaux@gmail.com",
-  "publishConfig": {
-    "registry": "https://nexus.usehurrier.com/repository/logistics-npm-private/"
-  },
   "repository": {
     "type": "git",
     "url": "http://github.com/deliveryhero/localize-with-spreadsheet.git"

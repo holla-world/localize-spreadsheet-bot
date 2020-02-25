@@ -4,6 +4,10 @@
 ## Installation
 	npm install localize-with-spreadsheet
 
+Supports
+1. iOS, Android, js, 
+2. file splits from inline comments (only supports android)
+
 ## Example
 Given a Google Spreadsheet like this:  
 ![Spreadsheet example](https://github.com/xavierha/localize-with-spreadsheet/raw/master/doc/spreadsheet-example.png)
