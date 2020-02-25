@@ -5,7 +5,7 @@
   "author": "xavier.hainaux@gmail.com",
   "repository": {
     "type": "git",
-    "url": "http://github.com/deliveryhero/localize-with-spreadsheet.git"
+    "url": "https://github.com/ONode/localize-spreadsheet-bot.git"
   },
   "main": "index.js",
   "dependencies": {
