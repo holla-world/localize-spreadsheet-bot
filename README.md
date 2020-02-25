@@ -2,7 +2,7 @@
 
 
 ## Installation
-	npm install localize-with-spreadsheet
+	npm install localize-gsheet-pro
 
 Supports
 1. iOS, Android, js, 
@@ -11,6 +11,8 @@ Supports
 ## Example
 Given a Google Spreadsheet like this:  
 ![Spreadsheet example](https://github.com/xavierha/localize-with-spreadsheet/raw/master/doc/spreadsheet-example.png)
+
+Right now only good for android XML files where there comments with xxxx.xml and they will be split automatically.
 
 The tool fetch the spreadsheet and write the result to a file in the Android or iOS format:
 
@@ -27,6 +29,10 @@ Create a file update-localization.js
 
     transformer.save("nl.lproj/Localizable.strings", { valueCol: "NL", format: "ios" });
     transformer.save("fr.lproj/Localizable.strings", { valueCol: "FR", format: "ios" });
+
+    transformer.save("values/strings.xml", { valueCol: "NL", format: "android" }, function(){
+            transformer.programSplit ("values/" + "strings.xml", "values", "ZH");
+    });
 
 Run it with
 
