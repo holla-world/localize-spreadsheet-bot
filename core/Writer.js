@@ -39,6 +39,9 @@ FileWriter.prototype.getTransformedLines = function (lines, transformer) {
     var valueToInsert = '';
     for (var i = 0; i < lines.length; i++) {
         var line = lines[i];
+        if (line.getValue() == '') {
+            line.setValue(line.getKey());
+        }
         if (!line.isEmpty()) {
             if (line.isComment()) {
                 valueToInsert += transformer.transformComment(line.getComment());
